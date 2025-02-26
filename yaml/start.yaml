@@ -2,33 +2,33 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: team6-eureka-client-gateway-server
+  name: team6-gateway-server
   namespace: group1-team6
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: team6-eureka-client-gateway-server
+      app: team6-gateway-server
   template:
     metadata:
       labels:
-        app: team6-eureka-client-gateway-server
+        app: team6-gateway-server
     spec:
       containers:
-      - name: team6-eureka-client-gateway-server
-        image: k8s-vga-worker1:5000/group1-team6-eureka-client-gateway-server
-        imagePullPolicy: IfNotPresent
+      - name: team6-gateway-server
+        image: k8s-vga-worker1:5000/group1-team6-gateway-server
+        imagePullPolicy: Always
         ports:
         - containerPort: 9202
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: team6-eureka-client-gateway-server
+  name: team6-gateway-server
   namespace: group1-team6
 spec:
   selector:
-    app: team6-eureka-client-gateway-server
+    app: team6-gateway-server
   ports:
     - protocol: TCP
       port: 9202
