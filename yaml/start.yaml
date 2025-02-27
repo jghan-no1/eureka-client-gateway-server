@@ -5,7 +5,7 @@ metadata:
   name: team6-gateway-server
   namespace: group1-team6
 spec:
-  replicas: 1
+  # replicas: 1
   selector:
     matchLabels:
       app: team6-gateway-server
