@@ -5,7 +5,7 @@ spring:
   profiles:
     active: "prod"
   application:
-    name: "gateway-server-jghan"
+    name: "gateway-server"
   cloud:
     gateway:
       discovery:
